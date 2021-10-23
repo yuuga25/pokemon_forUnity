@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cdb20ff850f61645af61cc3e64735bd, type: 3}
+  m_Name: i_ImageDatas
+  m_EditorClassIdentifier: 
+  sheet:
+  - imageId: "Ball_Pok\xE9"
+    item_Image: {fileID: 21300000, guid: 60856acbbeb24ed4491e0729ea7d9aa6, type: 3}
+  - imageId: Ball_Great
+    item_Image: {fileID: 21300000, guid: d4d49f897253e33428924578fbead24e, type: 3}
+  - imageId: Ball_Ultra
+    item_Image: {fileID: 21300000, guid: 1f2d16e6d67a62a4abdcfb105a88207d, type: 3}
+  - imageId: Ball_Master
+    item_Image: {fileID: 21300000, guid: d755f6110ea01cf46ad370212b5d09c5, type: 3}
+  - imageId: Candy_Experience_XS
+    item_Image: {fileID: 21300000, guid: bcf3621cbd46164498c66923500bd862, type: 3}
+  - imageId: Candy_Experience_S
+    item_Image: {fileID: 21300000, guid: 3280c7627d04b1c4d88b3bdb760a85db, type: 3}
+  - imageId: Candy_Experience_M
+    item_Image: {fileID: 21300000, guid: 94295921d9e88574ba82ac309a089ce1, type: 3}
+  - imageId: Candy_Experience_L
+    item_Image: {fileID: 21300000, guid: 80af217c005a76b4e99f708f901472fa, type: 3}
+  - imageId: Candy_Experience_XL
+    item_Image: {fileID: 21300000, guid: b7dab9053ba9ee94dbef2c0b55f18d79, type: 3}
+  - imageId: Candy_Mysterious
+    item_Image: {fileID: 21300000, guid: 395539a7540470d4fa78a461da34280b, type: 3}
+  - imageId: Mint_blue
+    item_Image: {fileID: 21300000, guid: 6bcefa9f49e8bfa4b9969a635b7ffe17, type: 3}
+  - imageId: Mint_green
+    item_Image: {fileID: 21300000, guid: 655ed3d3d7745454885e3d84808b438a, type: 3}
+  - imageId: Mint_pink
+    item_Image: {fileID: 21300000, guid: da0bbc81c0cb56f438a1b3212f587741, type: 3}
+  - imageId: Mint_red
+    item_Image: {fileID: 21300000, guid: 854cf6b1e1960bb4c82ef6303d2415c5, type: 3}
+  - imageId: Mint_sky
+    item_Image: {fileID: 21300000, guid: 87d962ee345e9d546af1587ce7c5e077, type: 3}
+  - imageId: Mint_white
+    item_Image: {fileID: 21300000, guid: 9b73eac66eff6c144b456d9af2fa64b8, type: 3}
+  - imageId: Characteristic_capsule
+    item_Image: {fileID: 21300000, guid: 1125319427460c44198a8f94a58ba4a1, type: 3}
+  - imageId: Differentcolor_capsules
+    item_Image: {fileID: 21300000, guid: 1125319427460c44198a8f94a58ba4a1, type: 3}

@@ -1,0 +1,132 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a626999b55fc8c74ea6be0387a9f178c, type: 3}
+  m_Name: b_ImageDatas
+  m_EditorClassIdentifier: 
+  sheet:
+  - displayName: "\u30D0\u30F3\u30B8\u306E\u307F"
+    imageId: Aguav_Berry
+    item_Image: {fileID: 21300000, guid: 869f553f21cf74146b333b06087a8168, type: 3}
+  - displayName: "\u3068\u3064\u3052\u304D\u30C1\u30E7\u30C3\u30AD"
+    imageId: Assault_Vest
+    item_Image: {fileID: 21300000, guid: 1394ff4c15330904888a8f1819a7bfaa, type: 3}
+  - displayName: "\u304F\u308D\u304A\u3073"
+    imageId: Black_Belt
+    item_Image: {fileID: 21300000, guid: ce2a54afadd9eeb4face0107f6634da1, type: 3}
+  - displayName: "\u304F\u308D\u3044\u30E1\u30AC\u30CD"
+    imageId: Black_Glasses
+    item_Image: {fileID: 21300000, guid: 8ac27a9a349d39e4e9c734e531e1ea5a, type: 3}
+  - displayName: "\u304F\u308D\u3044\u30D8\u30C9\u30ED"
+    imageId: Black_Sludge
+    item_Image: {fileID: 21300000, guid: b102ab3004812e54bb322eeb1b789985, type: 3}
+  - displayName: "\u3082\u304F\u305F\u3093"
+    imageId: Charcoal
+    item_Image: {fileID: 21300000, guid: 558d16af91a64214ca811826e940a260, type: 3}
+  - displayName: "\u3053\u3060\u308F\u308A\u30CF\u30C1\u30DE\u30AD"
+    imageId: Choice_Band
+    item_Image: {fileID: 21300000, guid: b9e1c795ad0e196428c140edee24bf0e, type: 3}
+  - displayName: "\u3053\u3060\u308F\u308A\u30B9\u30AB\u30FC\u30D5"
+    imageId: Choice_Scarf
+    item_Image: {fileID: 21300000, guid: f38018fa704744f4a928848e4904c3eb, type: 3}
+  - displayName: "\u3053\u3060\u308F\u308A\u30E1\u30AC\u30CD"
+    imageId: Choice_Specs
+    item_Image: {fileID: 21300000, guid: 2a88004cd99891d49851eeb5830f6c97, type: 3}
+  - displayName: "\u308A\u3085\u3046\u306E\u30AD\u30D0"
+    imageId: Dragon_Fang
+    item_Image: {fileID: 21300000, guid: 9dea5dfa1f6f6ae4788f20a426850326, type: 3}
+  - displayName: "\u3057\u3093\u304B\u306E\u304D\u305B\u304D"
+    imageId: Eviolite
+    item_Image: {fileID: 21300000, guid: d561ef44815a56a448438afe62f516d0, type: 3}
+  - displayName: "\u305F\u3064\u3058\u3093\u306E\u304A\u3073"
+    imageId: Expert_Belt
+    item_Image: {fileID: 21300000, guid: 323e6198ca1995e48a0d41480d32c379, type: 3}
+  - displayName: "\u30D5\u30A3\u30E9\u306E\u307F"
+    imageId: Figy_Berry
+    item_Image: {fileID: 21300000, guid: b867955dea0d5664eb7e34925c845237, type: 3}
+  - displayName: "\u304D\u3042\u3044\u306E\u30BF\u30B9\u30AD"
+    imageId: Focus_Sash
+    item_Image: {fileID: 21300000, guid: 0c6dc3d7f9c77514eb27719e09c8e6a9, type: 3}
+  - displayName: "\u304B\u305F\u3044\u3044\u3057"
+    imageId: Hard_Stone
+    item_Image: {fileID: 21300000, guid: 3c1571734123f7140984859d68bae25f, type: 3}
+  - displayName: "\u30A4\u30A2\u306E\u307F"
+    imageId: Iapapa_Berry
+    item_Image: {fileID: 21300000, guid: 46be6a6e2c83c8641b08da06db12ba99, type: 3}
+  - displayName: "\u305F\u3079\u306E\u3053\u3057"
+    imageId: Leftovers
+    item_Image: {fileID: 21300000, guid: 17cfc5629f19de54fa36684bdfa454d4, type: 3}
+  - displayName: "\u3044\u306E\u3061\u306E\u305F\u307E"
+    imageId: Life_Orb
+    item_Image: {fileID: 21300000, guid: 039896ef36147f44b8960e6f32190a91, type: 3}
+  - displayName: "\u30E9\u30E0\u306E\u307F"
+    imageId: Lum_Berry
+    item_Image: {fileID: 21300000, guid: 477bfac37b9b642449c648615187a484, type: 3}
+  - displayName: "\u3058\u3057\u3083\u304F"
+    imageId: Magnet
+    item_Image: {fileID: 21300000, guid: c6658487fe5b97c4fa5c14bc63fb9dbb, type: 3}
+  - displayName: "\u30DE\u30B4\u306E\u307F"
+    imageId: Mago_Berry
+    item_Image: {fileID: 21300000, guid: d8fbdeccca3611649ae0ba63a4d4cb8d, type: 3}
+  - displayName: "\u30E1\u30BF\u30EB\u30B3\u30FC\u30C8"
+    imageId: Metal_Coat
+    item_Image: {fileID: 21300000, guid: 0111962bd64539a44bb2a2e2f06adc8f, type: 3}
+  - displayName: "\u304D\u305B\u304D\u306E\u30BF\u30CD"
+    imageId: Miracle_Seed
+    item_Image: {fileID: 21300000, guid: 7f019765513bd2d42bfa769a5f07cfb3, type: 3}
+  - displayName: "\u3057\u3093\u3074\u306E\u3057\u305A\u304F"
+    imageId: Mystic_Water
+    item_Image: {fileID: 21300000, guid: 1c633f75cea1e814a82c81b812b64330, type: 3}
+  - displayName: "\u3068\u3051\u306A\u3044\u3053\u304A\u308A"
+    imageId: Never-Melt_Ice
+    item_Image: {fileID: 21300000, guid: 618713192ce72764abb9b7f4220c7e93, type: 3}
+  - displayName: "\u305B\u3044\u308C\u3044\u30D7\u30EC\u30FC\u30C8"
+    imageId: Pixie_Plate
+    item_Image: {fileID: 21300000, guid: fb744675e051dfa478a4b43f84974a0d, type: 3}
+  - displayName: "\u3069\u304F\u3070\u308A"
+    imageId: Poison_Barb
+    item_Image: {fileID: 21300000, guid: a907f093ea70e554f98359e66859d650, type: 3}
+  - displayName: "\u305B\u3093\u305B\u3044\u306E\u30C4\u30E1"
+    imageId: Quick_Claw
+    item_Image: {fileID: 21300000, guid: 6f4af4f18b80a7648b11acb30be2ea6c, type: 3}
+  - displayName: "\u30B4\u30C4\u30B4\u30C4\u30E1\u30C3\u30C8"
+    imageId: Rocky_Helmet
+    item_Image: {fileID: 21300000, guid: 792892439ff2e7f4e8a6dc5ee0d01703, type: 3}
+  - displayName: "\u3059\u308B\u3069\u3044\u304F\u3061\u3070\u3057"
+    imageId: Sharp_Beak
+    item_Image: {fileID: 21300000, guid: b83129e86e54fb2478b1fe4277fec71f, type: 3}
+  - displayName: "\u304B\u3044\u304C\u3089\u306E\u3059\u305A"
+    imageId: Shell_Bell
+    item_Image: {fileID: 21300000, guid: 7a7d605807e68c244afb557def790e7e, type: 3}
+  - displayName: "\u30B7\u30EB\u30AF\u306E\u30B9\u30AB\u30FC\u30D5"
+    imageId: Silk_Scarf
+    item_Image: {fileID: 21300000, guid: 87ff4d9fc17ed644f9d64b24ebeaa69a, type: 3}
+  - displayName: "\u304E\u3093\u306E\u3053\u306A"
+    imageId: Silver_Powder
+    item_Image: {fileID: 21300000, guid: 5e731cffc11496d4bbbce06f608f1044, type: 3}
+  - displayName: "\u30AA\u30DC\u30F3\u306E\u307F"
+    imageId: Sitrus_Berry
+    item_Image: {fileID: 21300000, guid: 6f79f7e07ceb2c441a1c1d4705e7f0c9, type: 3}
+  - displayName: "\u3084\u308F\u3089\u304B\u3044\u3059\u306A"
+    imageId: Soft_Sand
+    item_Image: {fileID: 21300000, guid: 756f13b4412c1e7419c2931ea95c452a, type: 3}
+  - displayName: "\u306E\u308D\u3044\u306E\u304A\u3075\u3060"
+    imageId: Spell_Tag
+    item_Image: {fileID: 21300000, guid: f4eaad501a092c644b0b395705fe069c, type: 3}
+  - displayName: "\u307E\u304C\u3063\u305F\u30B9\u30D7\u30FC\u30F3"
+    imageId: Twisted_Spoon
+    item_Image: {fileID: 21300000, guid: b80445f287e36274cbb067ba5927c0c3, type: 3}
+  - displayName: "\u3058\u3083\u304F\u3066\u3093\u307B\u3051\u3093"
+    imageId: Weakness_Policy
+    item_Image: {fileID: 21300000, guid: f12bfedaf18148047995157ba6a37df6, type: 3}
+  - displayName: "\u30A6\u30A4\u306E\u307F"
+    imageId: Wiki_Berry
+    item_Image: {fileID: 21300000, guid: 08a4da3235ab62a40be8fd62c6ba7cdd, type: 3}
