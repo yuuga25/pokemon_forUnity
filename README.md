@@ -1,4 +1,5 @@
-# 個人開発作品「Pokémon Battle Simulator」
+# 個人開発作品
+# 「Pokémon Battle Simulator」
 
 # 制作意図
 
