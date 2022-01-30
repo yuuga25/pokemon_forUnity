@@ -65,4 +65,4 @@ PlayFabを使用して制作するのが初めてであり、PlayFabの仕様に
   
   
 ***
-<div style="text-align: right;"> 2022/01/31　記述 </div>
+2022/01/31　記述
