@@ -4,6 +4,7 @@
 
 - [概要](https://github.com/yuuga25/pokemon_forUnity#%E6%A6%82%E8%A6%81)
     - [解説動画](https://github.com/yuuga25/pokemon_forUnity#%E8%A7%A3%E8%AA%AC%E5%8B%95%E7%94%BB-)
+- [ゲーム内容]()
 - [製作意図](https://github.com/yuuga25/pokemon_forUnity#%E5%88%B6%E4%BD%9C%E6%84%8F%E5%9B%B3)
 - [使用技術](https://github.com/yuuga25/pokemon_forUnity#%E4%BD%BF%E7%94%A8%E6%8A%80%E8%A1%93)
 - [気を付けた・こだわった部分](https://github.com/yuuga25/pokemon_forUnity#%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9)
@@ -23,6 +24,10 @@
 ※非営利目的です※
 
 ### [解説動画 ←](https://youtu.be/9KUepTCOu5s)
+
+## ゲーム内容
+
+コンソール向けに発売されているポケモンのバトル要素と同じです。
 
 ## 制作意図
 
