@@ -19,7 +19,7 @@ public class ReplaceScript : MonoBehaviour
         battleController.textDisplay.text = "";
 
         var enemy_Poke_Image = battleController.Pokemon2.transform.Find("Image_Poke_Player2").GetComponent<Image>();
-        var poke = BattleDatas.enemy_PokemonData[battleController.enemy_PokeTeamNum];
+        var poke = BattleDatas_Default.enemy_PokemonData[battleController.enemy_PokeTeamNum];
         var pokeData = battleController.p_ImageDatas.sheet.Where(x => x.p_Id == poke.userP_Id);
         ImageData_Pokémon.GenderType genderType = new ImageData_Pokémon.GenderType();
         foreach (var p in pokeData)
@@ -61,7 +61,7 @@ public class ReplaceScript : MonoBehaviour
         var slider_Player = HpBer_Player.transform.Find("Slider").GetComponent<Slider>();
         slider_Player.minValue = Mathf.Floor(poke.userP_Real_Hp / 36.4f * -1);
         slider_Player.maxValue = poke.userP_Real_Hp;
-        slider_Player.value = BattleDatas.enemy_OthersStatus[battleController.enemy_PokeTeamNum].hp;
+        slider_Player.value = BattleDatas_Default.enemy_OthersStatus[battleController.enemy_PokeTeamNum].hp;
         if (slider_Player.value <= slider_Player.maxValue / 5)
         {
             slider_Player.gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color = battleController.Color_HpBer[2];
@@ -97,7 +97,7 @@ public class ReplaceScript : MonoBehaviour
         var enemy_PokeName = poke.userP_NickName;
 
         var enemy_Speed = poke.userP_Real_S;
-        if (BattleDatas.enemy_OthersStatus[battleController.enemy_PokeTeamNum].b_item == "こだわりスカーフ")
+        if (BattleDatas_Default.enemy_OthersStatus[battleController.enemy_PokeTeamNum].b_item == "こだわりスカーフ")
         {
             enemy_Speed = Mathf.FloorToInt(enemy_Speed * 1.5f);
         }
@@ -108,8 +108,8 @@ public class ReplaceScript : MonoBehaviour
         if (battleController.enemy_PokeTeamNum == 1)
         {
             var image_EnemyPoke = battleController.On_hand_List.transform.Find($"P2_poke2").GetComponent<Image>();
-            var data = battleController.p_ImageDatas.sheet.Find(x => x.p_Id == BattleDatas.enemy_PokemonData[battleController.enemy_PokeTeamNum].userP_Id);
-            if (BattleDatas.enemy_PokemonData[battleController.enemy_PokeTeamNum].isDifferentColors)
+            var data = battleController.p_ImageDatas.sheet.Find(x => x.p_Id == BattleDatas_Default.enemy_PokemonData[battleController.enemy_PokeTeamNum].userP_Id);
+            if (BattleDatas_Default.enemy_PokemonData[battleController.enemy_PokeTeamNum].isDifferentColors)
             {
                 image_EnemyPoke.sprite = data.p_ImageHand_C;
             }
@@ -121,8 +121,8 @@ public class ReplaceScript : MonoBehaviour
         else if (battleController.enemy_PokeTeamNum == 2)
         {
             var image_EnemyPoke = battleController.On_hand_List.transform.Find($"P2_poke3").GetComponent<Image>();
-            var data = battleController.p_ImageDatas.sheet.Find(x => x.p_Id == BattleDatas.enemy_PokemonData[battleController.enemy_PokeTeamNum].userP_Id);
-            if (BattleDatas.enemy_PokemonData[battleController.enemy_PokeTeamNum].isDifferentColors)
+            var data = battleController.p_ImageDatas.sheet.Find(x => x.p_Id == BattleDatas_Default.enemy_PokemonData[battleController.enemy_PokeTeamNum].userP_Id);
+            if (BattleDatas_Default.enemy_PokemonData[battleController.enemy_PokeTeamNum].isDifferentColors)
             {
                 image_EnemyPoke.sprite = data.p_ImageHand_C;
             }
@@ -149,8 +149,8 @@ public class ReplaceScript : MonoBehaviour
 
             var p1_Image_Characteristic = battleController.Pokemon2.transform.Find("Image_Characteristic");
 
-            var player2 = BattleDatas.user_PokemonData[battleController.player_PokeTeamNum];
-            var player1 = BattleDatas.enemy_PokemonData[battleController.enemy_PokeTeamNum];
+            var player2 = BattleDatas_Default.user_PokemonData[battleController.player_PokeTeamNum];
+            var player1 = BattleDatas_Default.enemy_PokemonData[battleController.enemy_PokeTeamNum];
 
             if (player1.userP_Characteristic == "きけんよち")
             {
@@ -206,7 +206,7 @@ public class ReplaceScript : MonoBehaviour
                 battleController.enemy_Anim.SetBool("c_In", false);
             }
 
-            if (BattleDatas.enemy_Fields.stealthRock == true)
+            if (BattleDatas_Default.enemy_Fields.stealthRock == true)
             {
                 var type = battleController.c_Data.sheet.Find(x => x.type == Pokémon_Type.Type.Rock);
                 int damage = player1.userP_Real_Hp / 8;
@@ -227,7 +227,7 @@ public class ReplaceScript : MonoBehaviour
                     damage = damage / 2;
                 }
                 if (damage <= 0) { damage = 1; }
-                BattleDatas.enemy_OthersStatus[battleController.enemy_PokeTeamNum].hp -= Mathf.FloorToInt(damage);
+                BattleDatas_Default.enemy_OthersStatus[battleController.enemy_PokeTeamNum].hp -= Mathf.FloorToInt(damage);
                 battleController.textDisplay.text = $"{player1.userP_NickName}に\nとがった岩が　食いこんだ！";
                 yield return new WaitForSeconds(1.2f);
                 battleController.textDisplay.text = "";
@@ -293,7 +293,7 @@ public class ReplaceScript : MonoBehaviour
 
         #region プレイヤーポケモンの表示・UI
         var player_Poke_Image = battleController.Pokemon1.transform.Find("Image_Poke_Player1").GetComponent<Image>();
-        var poke = BattleDatas.user_PokemonData[battleController.player_PokeTeamNum];
+        var poke = BattleDatas_Default.user_PokemonData[battleController.player_PokeTeamNum];
         var pokeData = battleController.p_ImageDatas.sheet.Where(x => x.p_Id == poke.userP_Id);
         ImageData_Pokémon.GenderType genderType = new ImageData_Pokémon.GenderType();
         foreach (var p in pokeData)
@@ -335,7 +335,7 @@ public class ReplaceScript : MonoBehaviour
         var slider_Player = HpBer_Player.transform.Find("Slider").GetComponent<Slider>();
         slider_Player.minValue = Mathf.Floor(poke.userP_Real_Hp / 36.4f * -1);
         slider_Player.maxValue = poke.userP_Real_Hp;
-        slider_Player.value = BattleDatas.user_OthersStatus[battleController.player_PokeTeamNum].hp;
+        slider_Player.value = BattleDatas_Default.user_OthersStatus[battleController.player_PokeTeamNum].hp;
         if (slider_Player.value <= slider_Player.maxValue / 5)
         {
             slider_Player.gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color = battleController.Color_HpBer[2];
@@ -350,13 +350,13 @@ public class ReplaceScript : MonoBehaviour
         }
 
         HpBer_Player.transform.Find("condition").gameObject.SetActive(false);
-        if (BattleDatas.user_OthersStatus[battleController.player_PokeTeamNum].condition != BattleEnum.condition.none)
+        if (BattleDatas_Default.user_OthersStatus[battleController.player_PokeTeamNum].condition != BattleEnum.condition.none)
         {
             var condition = HpBer_Player.transform.Find("condition");
             condition.gameObject.SetActive(true);
             Color conditionColor = new Color();
             string conditionName = "";
-            switch (BattleDatas.user_OthersStatus[battleController.player_PokeTeamNum].condition)
+            switch (BattleDatas_Default.user_OthersStatus[battleController.player_PokeTeamNum].condition)
             {
                 case BattleEnum.condition.paralysis:
                     conditionColor = battleController.Color_Condition[0];
@@ -392,7 +392,7 @@ public class ReplaceScript : MonoBehaviour
         }
 
         HpBer_Player.transform.Find("Text_PokeName").GetComponent<Text>().text = poke.userP_NickName;
-        HpBer_Player.transform.Find("Text_HPValue").GetComponent<Text>().text = $"{BattleDatas.user_OthersStatus[battleController.player_PokeTeamNum].hp}/{poke.userP_Real_Hp}";
+        HpBer_Player.transform.Find("Text_HPValue").GetComponent<Text>().text = $"{BattleDatas_Default.user_OthersStatus[battleController.player_PokeTeamNum].hp}/{poke.userP_Real_Hp}";
 
         var genderText = HpBer_Player.Find("Text_Gender").GetComponent<Text>();
         genderText.gameObject.SetActive(true);
@@ -414,18 +414,18 @@ public class ReplaceScript : MonoBehaviour
         battleController.player_PokeName = poke.userP_NickName;
 
         player_Speed = poke.userP_Real_S;
-        if (BattleDatas.user_OthersStatus[battleController.player_PokeTeamNum].b_item == "こだわりスカーフ")
+        if (BattleDatas_Default.user_OthersStatus[battleController.player_PokeTeamNum].b_item == "こだわりスカーフ")
         {
             player_Speed = Mathf.FloorToInt(player_Speed * 1.5f);
         }
         player_Chara = poke.userP_Characteristic;
 
         #endregion
-        if(BattleDatas.enemy_BattleStatus.participationTurn == 0)
+        if(BattleDatas_Default.enemy_BattleStatus.participationTurn == 0)
         {
             #region エネミーポケモンの表示・UI
             var enemy_Poke_Image = battleController.Pokemon2.transform.Find("Image_Poke_Player2").GetComponent<Image>();
-            poke = BattleDatas.enemy_PokemonData[battleController.enemy_PokeTeamNum];
+            poke = BattleDatas_Default.enemy_PokemonData[battleController.enemy_PokeTeamNum];
             pokeData = battleController.p_ImageDatas.sheet.Where(x => x.p_Id == poke.userP_Id);
             foreach (var p in pokeData)
             {
@@ -466,7 +466,7 @@ public class ReplaceScript : MonoBehaviour
             slider_Player = HpBer_Player.transform.Find("Slider").GetComponent<Slider>();
             slider_Player.minValue = Mathf.Floor(poke.userP_Real_Hp / 36.4f * -1);
             slider_Player.maxValue = poke.userP_Real_Hp;
-            slider_Player.value = BattleDatas.enemy_OthersStatus[battleController.enemy_PokeTeamNum].hp;
+            slider_Player.value = BattleDatas_Default.enemy_OthersStatus[battleController.enemy_PokeTeamNum].hp;
             if (slider_Player.value <= slider_Player.maxValue / 5)
             {
                 slider_Player.gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color = battleController.Color_HpBer[2];
@@ -481,13 +481,13 @@ public class ReplaceScript : MonoBehaviour
             }
 
             HpBer_Player.transform.Find("condition").gameObject.SetActive(false);
-            if (BattleDatas.enemy_OthersStatus[battleController.player_PokeTeamNum].condition != BattleEnum.condition.none)
+            if (BattleDatas_Default.enemy_OthersStatus[battleController.player_PokeTeamNum].condition != BattleEnum.condition.none)
             {
                 var condition = HpBer_Player.transform.Find("condition");
                 condition.gameObject.SetActive(true);
                 Color conditionColor = new Color();
                 string conditionName = "";
-                switch (BattleDatas.enemy_OthersStatus[battleController.player_PokeTeamNum].condition)
+                switch (BattleDatas_Default.enemy_OthersStatus[battleController.player_PokeTeamNum].condition)
                 {
                     case BattleEnum.condition.paralysis:
                         conditionColor = battleController.Color_Condition[0];
@@ -543,7 +543,7 @@ public class ReplaceScript : MonoBehaviour
             battleController.enemy_PokeName = poke.userP_NickName;
 
             enemy_Speed = poke.userP_Real_S;
-            if (BattleDatas.enemy_OthersStatus[battleController.enemy_PokeTeamNum].b_item == "こだわりスカーフ")
+            if (BattleDatas_Default.enemy_OthersStatus[battleController.enemy_PokeTeamNum].b_item == "こだわりスカーフ")
             {
                 enemy_Speed = Mathf.FloorToInt(enemy_Speed * 1.5f);
             }
@@ -559,8 +559,8 @@ public class ReplaceScript : MonoBehaviour
         if(battleController.enemy_PokeTeamNum == 1)
         {
             var image_EnemyPoke = battleController.On_hand_List.transform.Find($"P2_poke2").GetComponent<Image>();
-            var data = battleController.p_ImageDatas.sheet.Find(x => x.p_Id == BattleDatas.enemy_PokemonData[battleController.enemy_PokeTeamNum].userP_Id);
-            if (BattleDatas.enemy_PokemonData[battleController.enemy_PokeTeamNum].isDifferentColors)
+            var data = battleController.p_ImageDatas.sheet.Find(x => x.p_Id == BattleDatas_Default.enemy_PokemonData[battleController.enemy_PokeTeamNum].userP_Id);
+            if (BattleDatas_Default.enemy_PokemonData[battleController.enemy_PokeTeamNum].isDifferentColors)
             {
                 image_EnemyPoke.sprite = data.p_ImageHand_C;
             }
@@ -572,8 +572,8 @@ public class ReplaceScript : MonoBehaviour
         else if (battleController.enemy_PokeTeamNum == 2)
         {
             var image_EnemyPoke = battleController.On_hand_List.transform.Find($"P2_poke3").GetComponent<Image>();
-            var data = battleController.p_ImageDatas.sheet.Find(x => x.p_Id == BattleDatas.enemy_PokemonData[battleController.enemy_PokeTeamNum].userP_Id);
-            if (BattleDatas.enemy_PokemonData[battleController.enemy_PokeTeamNum].isDifferentColors)
+            var data = battleController.p_ImageDatas.sheet.Find(x => x.p_Id == BattleDatas_Default.enemy_PokemonData[battleController.enemy_PokeTeamNum].userP_Id);
+            if (BattleDatas_Default.enemy_PokemonData[battleController.enemy_PokeTeamNum].isDifferentColors)
             {
                 image_EnemyPoke.sprite = data.p_ImageHand_C;
             }
@@ -588,7 +588,7 @@ public class ReplaceScript : MonoBehaviour
 
         IEnumerator inPokemon()
         {
-            if(BattleDatas.enemy_BattleStatus.participationTurn == 0)
+            if(BattleDatas_Default.enemy_BattleStatus.participationTurn == 0)
             {
                 battleController.enemy_Anim.SetBool("p_In", true);
                 battleController.Audio_SE.PlayOneShot(turnScript.inOut_Audio[0]);
@@ -607,8 +607,8 @@ public class ReplaceScript : MonoBehaviour
                 var p1_Image_Characteristic = battleController.Pokemon1.transform.Find("Image_Characteristic");
                 var p2_Image_Characteristic = battleController.Pokemon2.transform.Find("Image_Characteristic");
 
-                var player1 = BattleDatas.user_PokemonData[battleController.player_PokeTeamNum];
-                var player2 = BattleDatas.enemy_PokemonData[battleController.enemy_PokeTeamNum];
+                var player1 = BattleDatas_Default.user_PokemonData[battleController.player_PokeTeamNum];
+                var player2 = BattleDatas_Default.enemy_PokemonData[battleController.enemy_PokeTeamNum];
 
                 var anim1 = battleController.player_Anim;
                 var anim2 = battleController.enemy_Anim;
@@ -697,9 +697,9 @@ public class ReplaceScript : MonoBehaviour
                         anim1.SetBool("c_In", false);
                     }
 
-                    if (player1 == BattleDatas.user_PokemonData[battleController.player_PokeTeamNum])
+                    if (player1 == BattleDatas_Default.user_PokemonData[battleController.player_PokeTeamNum])
                     {
-                        if (BattleDatas.user_Fields.stealthRock == true)
+                        if (BattleDatas_Default.user_Fields.stealthRock == true)
                         {
                             var type = battleController.c_Data.sheet.Find(x => x.type == Pokémon_Type.Type.Rock);
                             int damage = player1.userP_Real_Hp / 8;
@@ -720,12 +720,12 @@ public class ReplaceScript : MonoBehaviour
                                 damage = damage / 2;
                             }
                             if (damage <= 0) { damage = 1; }
-                            BattleDatas.user_OthersStatus[battleController.player_PokeTeamNum].hp -= Mathf.FloorToInt(damage);
+                            BattleDatas_Default.user_OthersStatus[battleController.player_PokeTeamNum].hp -= Mathf.FloorToInt(damage);
                         }
                     }
-                    else if (player1 == BattleDatas.enemy_PokemonData[battleController.enemy_PokeTeamNum])
+                    else if (player1 == BattleDatas_Default.enemy_PokemonData[battleController.enemy_PokeTeamNum])
                     {
-                        if (BattleDatas.enemy_Fields.stealthRock == true)
+                        if (BattleDatas_Default.enemy_Fields.stealthRock == true)
                         {
                             var type = battleController.c_Data.sheet.Find(x => x.type == Pokémon_Type.Type.Rock);
                             int damage = player1.userP_Real_Hp / 8;
@@ -746,7 +746,7 @@ public class ReplaceScript : MonoBehaviour
                                 damage = damage / 2;
                             }
                             if (damage <= 0) { damage = 1; }
-                            BattleDatas.enemy_OthersStatus[battleController.enemy_PokeTeamNum].hp -= Mathf.FloorToInt(damage);
+                            BattleDatas_Default.enemy_OthersStatus[battleController.enemy_PokeTeamNum].hp -= Mathf.FloorToInt(damage);
                         }
                     }
                 }
@@ -763,8 +763,8 @@ public class ReplaceScript : MonoBehaviour
                 var p1_Image_Characteristic = battleController.Pokemon1.transform.Find("Image_Characteristic");
                 var p2_Image_Characteristic = battleController.Pokemon2.transform.Find("Image_Characteristic");
 
-                var player1 = BattleDatas.user_PokemonData[battleController.player_PokeTeamNum];
-                var player2 = BattleDatas.enemy_PokemonData[battleController.enemy_PokeTeamNum];
+                var player1 = BattleDatas_Default.user_PokemonData[battleController.player_PokeTeamNum];
+                var player2 = BattleDatas_Default.enemy_PokemonData[battleController.enemy_PokeTeamNum];
 
                 var anim1 = battleController.player_Anim;
 
@@ -826,7 +826,7 @@ public class ReplaceScript : MonoBehaviour
                     anim1.SetBool("c_In", false);
                 }
 
-                if(BattleDatas.user_Fields.stealthRock == true)
+                if(BattleDatas_Default.user_Fields.stealthRock == true)
                 {
                     var type = battleController.c_Data.sheet.Find(x => x.type == Pokémon_Type.Type.Rock);
                     int damage = player1.userP_Real_Hp / 8;
@@ -847,7 +847,7 @@ public class ReplaceScript : MonoBehaviour
                         damage = damage / 2;
                     }
                     if(damage <= 0) { damage = 1; }
-                    BattleDatas.user_OthersStatus[battleController.player_PokeTeamNum].hp -= Mathf.FloorToInt(damage);
+                    BattleDatas_Default.user_OthersStatus[battleController.player_PokeTeamNum].hp -= Mathf.FloorToInt(damage);
                     battleController.textDisplay.text = $"{player1.userP_NickName}に\nとがった岩が　食いこんだ！";
                     yield return new WaitForSeconds(1.2f);
                     battleController.textDisplay.text = "";

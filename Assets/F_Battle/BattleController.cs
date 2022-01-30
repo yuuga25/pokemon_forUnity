@@ -78,8 +78,8 @@ public class BattleController : MonoBehaviour
 
     private void Start()
     {
-        BattleDatas.user_BattleStatus = new BattleStatus();
-        BattleDatas.enemy_BattleStatus = new BattleStatus();
+        BattleDatas_Default.user_BattleStatus = new BattleStatus();
+        BattleDatas_Default.enemy_BattleStatus = new BattleStatus();
 
         PlayerControlObj.SetActive(true);
 
@@ -93,8 +93,8 @@ public class BattleController : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             var image_UserPoke = On_hand_List.transform.Find($"P1_poke{i + 1}").GetComponent<Image>();
-            var data = p_ImageDatas.sheet.Find(x => x.p_Id == BattleDatas.user_PokemonData[i].userP_Id);
-            if (BattleDatas.user_PokemonData[i].isDifferentColors)
+            var data = p_ImageDatas.sheet.Find(x => x.p_Id == BattleDatas_Default.user_PokemonData[i].userP_Id);
+            if (BattleDatas_Default.user_PokemonData[i].isDifferentColors)
             {
                 image_UserPoke.sprite = data.p_ImageHand_C;
             }
@@ -104,8 +104,8 @@ public class BattleController : MonoBehaviour
             }
         }
         var image_EnemyPoke = On_hand_List.transform.Find($"P2_poke1").GetComponent<Image>();
-        var dataa = p_ImageDatas.sheet.Find(x => x.p_Id == BattleDatas.enemy_PokemonData[enemy_PokeTeamNum].userP_Id);
-        if (BattleDatas.enemy_PokemonData[enemy_PokeTeamNum].isDifferentColors)
+        var dataa = p_ImageDatas.sheet.Find(x => x.p_Id == BattleDatas_Default.enemy_PokemonData[enemy_PokeTeamNum].userP_Id);
+        if (BattleDatas_Default.enemy_PokemonData[enemy_PokeTeamNum].isDifferentColors)
         {
             image_EnemyPoke.sprite = dataa.p_ImageHand_C;
         }
@@ -125,7 +125,7 @@ public class BattleController : MonoBehaviour
 
         #region プレイヤーポケモンの表示・UI
         var player_Poke_Image = Pokemon1.transform.Find("Image_Poke_Player1").GetComponent<Image>();
-        var poke = BattleDatas.user_PokemonData[0];
+        var poke = BattleDatas_Default.user_PokemonData[0];
         var pokeData = p_ImageDatas.sheet.Where(x => x.p_Id == poke.userP_Id);
         ImageData_Pokémon.GenderType genderType = new ImageData_Pokémon.GenderType();
         foreach (var p in pokeData)
@@ -167,16 +167,16 @@ public class BattleController : MonoBehaviour
         var slider_Player = HpBer_Player.transform.Find("Slider").GetComponent<Slider>();
         slider_Player.minValue = Mathf.Floor(poke.userP_Real_Hp / 36.4f * -1);
         slider_Player.maxValue = poke.userP_Real_Hp;
-        slider_Player.value = BattleDatas.user_OthersStatus[0].hp;
+        slider_Player.value = BattleDatas_Default.user_OthersStatus[0].hp;
 
         HpBer_Player.transform.Find("condition").gameObject.SetActive(false);
-        if (BattleDatas.user_OthersStatus[player_PokeTeamNum].condition != BattleEnum.condition.none)
+        if (BattleDatas_Default.user_OthersStatus[player_PokeTeamNum].condition != BattleEnum.condition.none)
         {
             var condition = HpBer_Player.transform.Find("condition");
             condition.gameObject.SetActive(true);
             Color conditionColor = new Color();
             string conditionName = "";
-            switch (BattleDatas.user_OthersStatus[player_PokeTeamNum].condition)
+            switch (BattleDatas_Default.user_OthersStatus[player_PokeTeamNum].condition)
             {
                 case BattleEnum.condition.paralysis:
                     conditionColor = Color_Condition[0];
@@ -212,7 +212,7 @@ public class BattleController : MonoBehaviour
         }
 
         HpBer_Player.transform.Find("Text_PokeName").GetComponent<Text>().text = poke.userP_NickName;
-        HpBer_Player.transform.Find("Text_HPValue").GetComponent<Text>().text = $"{BattleDatas.user_OthersStatus[0].hp}/{poke.userP_Real_Hp}";
+        HpBer_Player.transform.Find("Text_HPValue").GetComponent<Text>().text = $"{BattleDatas_Default.user_OthersStatus[0].hp}/{poke.userP_Real_Hp}";
 
         var genderText = HpBer_Player.Find("Text_Gender").GetComponent<Text>();
         genderText.gameObject.SetActive(true); 
@@ -234,7 +234,7 @@ public class BattleController : MonoBehaviour
         player_PokeName = poke.userP_NickName;
 
         player_Speed = poke.userP_Real_S;
-        if(BattleDatas.user_OthersStatus[0].b_item == "こだわりスカーフ")
+        if(BattleDatas_Default.user_OthersStatus[0].b_item == "こだわりスカーフ")
         {
             player_Speed = Mathf.FloorToInt(player_Speed * 1.5f);
         }
@@ -243,7 +243,7 @@ public class BattleController : MonoBehaviour
         #endregion
         #region エネミーポケモンの表示・UI
         var enemy_Poke_Image = Pokemon2.transform.Find("Image_Poke_Player2").GetComponent<Image>();
-        poke = BattleDatas.enemy_PokemonData[0];
+        poke = BattleDatas_Default.enemy_PokemonData[0];
         pokeData = p_ImageDatas.sheet.Where(x => x.p_Id == poke.userP_Id);
         foreach (var p in pokeData)
         {
@@ -284,16 +284,16 @@ public class BattleController : MonoBehaviour
         slider_Player = HpBer_Player.transform.Find("Slider").GetComponent<Slider>();
         slider_Player.minValue = Mathf.Floor(poke.userP_Real_Hp / 36.4f * -1);
         slider_Player.maxValue = poke.userP_Real_Hp;
-        slider_Player.value = BattleDatas.enemy_OthersStatus[0].hp;
+        slider_Player.value = BattleDatas_Default.enemy_OthersStatus[0].hp;
 
         HpBer_Player.transform.Find("condition").gameObject.SetActive(false);
-        if (BattleDatas.user_OthersStatus[player_PokeTeamNum].condition != BattleEnum.condition.none)
+        if (BattleDatas_Default.user_OthersStatus[player_PokeTeamNum].condition != BattleEnum.condition.none)
         {
             var condition = HpBer_Player.transform.Find("condition");
             condition.gameObject.SetActive(true);
             Color conditionColor = new Color();
             string conditionName = "";
-            switch (BattleDatas.enemy_OthersStatus[enemy_PokeTeamNum].condition)
+            switch (BattleDatas_Default.enemy_OthersStatus[enemy_PokeTeamNum].condition)
             {
                 case BattleEnum.condition.paralysis:
                     conditionColor = Color_Condition[0];
@@ -350,7 +350,7 @@ public class BattleController : MonoBehaviour
         enemy_PokeName = poke.userP_Name;
 
         enemy_Speed = poke.userP_Real_S;
-        if (BattleDatas.enemy_OthersStatus[0].b_item == "こだわりスカーフ")
+        if (BattleDatas_Default.enemy_OthersStatus[0].b_item == "こだわりスカーフ")
         {
             enemy_Speed = Mathf.FloorToInt(enemy_Speed * 1.5f);
         }
@@ -380,8 +380,8 @@ public class BattleController : MonoBehaviour
             var p1_Image_Characteristic = Pokemon1.transform.Find("Image_Characteristic");
             var p2_Image_Characteristic = Pokemon2.transform.Find("Image_Characteristic");
 
-            var player1 = BattleDatas.user_PokemonData[player_PokeTeamNum];
-            var player2 = BattleDatas.enemy_PokemonData[enemy_PokeTeamNum];
+            var player1 = BattleDatas_Default.user_PokemonData[player_PokeTeamNum];
+            var player2 = BattleDatas_Default.enemy_PokemonData[enemy_PokeTeamNum];
 
             var anim1 = player_Anim;
             var anim2 = enemy_Anim;
@@ -479,7 +479,7 @@ public class BattleController : MonoBehaviour
 
     private void Update()
     {
-        if(BattleDatas.enemy_OthersStatus[0].hp <= 0 && BattleDatas.enemy_OthersStatus[1].hp <= 0 && BattleDatas.enemy_OthersStatus[2].hp <= 0)
+        if(BattleDatas_Default.enemy_OthersStatus[0].hp <= 0 && BattleDatas_Default.enemy_OthersStatus[1].hp <= 0 && BattleDatas_Default.enemy_OthersStatus[2].hp <= 0)
         {
             if (!turnScript.isLose && !turnScript.isWin)
             {
@@ -487,7 +487,7 @@ public class BattleController : MonoBehaviour
             }
         }
 
-        if (BattleDatas.user_OthersStatus[0].hp <= 0 && BattleDatas.user_OthersStatus[1].hp <= 0 && BattleDatas.user_OthersStatus[2].hp <= 0)
+        if (BattleDatas_Default.user_OthersStatus[0].hp <= 0 && BattleDatas_Default.user_OthersStatus[1].hp <= 0 && BattleDatas_Default.user_OthersStatus[2].hp <= 0)
         {
             if (!turnScript.isWin && !turnScript.isLose)
             {
@@ -498,7 +498,7 @@ public class BattleController : MonoBehaviour
 
     public void TechniqueDisplay()
     {
-        var poke = BattleDatas.user_PokemonData[player_PokeTeamNum];
+        var poke = BattleDatas_Default.user_PokemonData[player_PokeTeamNum];
 
         for(var i = 0; i < 4; i++)
         {
@@ -617,20 +617,20 @@ public class BattleController : MonoBehaviour
             switch (i)
             {
                 case 0:
-                    button.Find("Text_PP").GetComponent<Text>().text = $"{BattleDatas.user_OthersStatus[player_PokeTeamNum].pp_Technique1}/{techniqueData.t_PP}";
-                    pp = BattleDatas.user_OthersStatus[player_PokeTeamNum].pp_Technique1;
+                    button.Find("Text_PP").GetComponent<Text>().text = $"{BattleDatas_Default.user_OthersStatus[player_PokeTeamNum].pp_Technique1}/{techniqueData.t_PP}";
+                    pp = BattleDatas_Default.user_OthersStatus[player_PokeTeamNum].pp_Technique1;
                     break;
                 case 1:
-                    button.Find("Text_PP").GetComponent<Text>().text = $"{BattleDatas.user_OthersStatus[player_PokeTeamNum].pp_Technique2}/{techniqueData.t_PP}";
-                    pp = BattleDatas.user_OthersStatus[player_PokeTeamNum].pp_Technique2;
+                    button.Find("Text_PP").GetComponent<Text>().text = $"{BattleDatas_Default.user_OthersStatus[player_PokeTeamNum].pp_Technique2}/{techniqueData.t_PP}";
+                    pp = BattleDatas_Default.user_OthersStatus[player_PokeTeamNum].pp_Technique2;
                     break;
                 case 2:
-                    button.Find("Text_PP").GetComponent<Text>().text = $"{BattleDatas.user_OthersStatus[player_PokeTeamNum].pp_Technique3}/{techniqueData.t_PP}";
-                    pp = BattleDatas.user_OthersStatus[player_PokeTeamNum].pp_Technique3;
+                    button.Find("Text_PP").GetComponent<Text>().text = $"{BattleDatas_Default.user_OthersStatus[player_PokeTeamNum].pp_Technique3}/{techniqueData.t_PP}";
+                    pp = BattleDatas_Default.user_OthersStatus[player_PokeTeamNum].pp_Technique3;
                     break;
                 case 3:
-                    button.Find("Text_PP").GetComponent<Text>().text = $"{BattleDatas.user_OthersStatus[player_PokeTeamNum].pp_Technique4}/{techniqueData.t_PP}";
-                    pp = BattleDatas.user_OthersStatus[player_PokeTeamNum].pp_Technique4;
+                    button.Find("Text_PP").GetComponent<Text>().text = $"{BattleDatas_Default.user_OthersStatus[player_PokeTeamNum].pp_Technique4}/{techniqueData.t_PP}";
+                    pp = BattleDatas_Default.user_OthersStatus[player_PokeTeamNum].pp_Technique4;
                     break;
             }
             if(pp <= 0)
@@ -645,7 +645,7 @@ public class BattleController : MonoBehaviour
             int magnification = 100;
 
             var attackType = c_Data.sheet.Find(x => x.typeName == techniqueData.t_Type);
-            var enemyPoke_Data = BattleDatas.enemy_PokemonData[enemy_PokeTeamNum];
+            var enemyPoke_Data = BattleDatas_Default.enemy_PokemonData[enemy_PokeTeamNum];
 
             if (attackType.twice.Contains(enemyPoke_Data.userP_Type1))
             {
@@ -709,13 +709,13 @@ public class BattleController : MonoBehaviour
         Control_Situation.transform.Find("Button_BackGround").gameObject.SetActive(false);
 
         Button_poke.transform.Find("condition").gameObject.SetActive(false);
-        if (BattleDatas.user_OthersStatus[player_PokeTeamNum].condition != BattleEnum.condition.none)
+        if (BattleDatas_Default.user_OthersStatus[player_PokeTeamNum].condition != BattleEnum.condition.none)
         {
             var condition = Button_poke.transform.Find("condition");
             condition.gameObject.SetActive(true);
             Color conditionColor = new Color();
             string conditionName = "";
-            switch (BattleDatas.user_OthersStatus[player_PokeTeamNum].condition)
+            switch (BattleDatas_Default.user_OthersStatus[player_PokeTeamNum].condition)
             {
                 case BattleEnum.condition.paralysis:
                     conditionColor = Color_Condition[0];
@@ -750,9 +750,9 @@ public class BattleController : MonoBehaviour
             condition.Find("Text").GetComponent<Text>().text = conditionName;
         }
 
-        var thisPoke = BattleDatas.user_PokemonData[player_PokeTeamNum];
-        var thisPoke_OtherStatus = BattleDatas.user_OthersStatus[player_PokeTeamNum];
-        var thisPoke_BattleStatus = BattleDatas.user_BattleStatus;
+        var thisPoke = BattleDatas_Default.user_PokemonData[player_PokeTeamNum];
+        var thisPoke_OtherStatus = BattleDatas_Default.user_OthersStatus[player_PokeTeamNum];
+        var thisPoke_BattleStatus = BattleDatas_Default.user_BattleStatus;
 
         var type1 = poke_Status.Find("Type1");
         Color buttonColor = new Color();
@@ -1200,9 +1200,9 @@ public class BattleController : MonoBehaviour
         Control_Situation.transform.Find("Button_Front").gameObject.SetActive(false);
         Control_Situation.transform.Find("Button_BackGround").gameObject.SetActive(true);
 
-        var thisPoke = BattleDatas.enemy_PokemonData[enemy_PokeTeamNum];
-        var thisPoke_OtherStatus = BattleDatas.enemy_OthersStatus[enemy_PokeTeamNum];
-        var thisPoke_BattleStatus = BattleDatas.enemy_BattleStatus;
+        var thisPoke = BattleDatas_Default.enemy_PokemonData[enemy_PokeTeamNum];
+        var thisPoke_OtherStatus = BattleDatas_Default.enemy_OthersStatus[enemy_PokeTeamNum];
+        var thisPoke_BattleStatus = BattleDatas_Default.enemy_BattleStatus;
 
         var icon = Button_poke.Find("Image_Icon").GetComponent<Image>();
         if (thisPoke.isDifferentColors)
@@ -1330,30 +1330,30 @@ public class BattleController : MonoBehaviour
             {
                 case 0:
                     poke = poke1;
-                    if(player_PokeTeamNum == 0 || player_PokeTeamNum == 255 && BattleDatas.user_OthersStatus[0].hp <= 0)
+                    if(player_PokeTeamNum == 0 || player_PokeTeamNum == 255 && BattleDatas_Default.user_OthersStatus[0].hp <= 0)
                     {
                         rePoke = 1;
                     }
-                    else if(player_PokeTeamNum == 1 || player_PokeTeamNum == 255 && BattleDatas.user_OthersStatus[1].hp <= 0)
+                    else if(player_PokeTeamNum == 1 || player_PokeTeamNum == 255 && BattleDatas_Default.user_OthersStatus[1].hp <= 0)
                     {
                         rePoke = 0;
                     }
-                    else if (player_PokeTeamNum == 2 || player_PokeTeamNum == 255 && BattleDatas.user_OthersStatus[2].hp <= 0)
+                    else if (player_PokeTeamNum == 2 || player_PokeTeamNum == 255 && BattleDatas_Default.user_OthersStatus[2].hp <= 0)
                     {
                         rePoke = 0;
                     }
                     break;
                 case 1:
                     poke = poke2;
-                    if (player_PokeTeamNum == 0 || player_PokeTeamNum == 255 && BattleDatas.user_OthersStatus[0].hp <= 0)
+                    if (player_PokeTeamNum == 0 || player_PokeTeamNum == 255 && BattleDatas_Default.user_OthersStatus[0].hp <= 0)
                     {
                         rePoke = 2;
                     }
-                    else if (player_PokeTeamNum == 1 || player_PokeTeamNum == 255 && BattleDatas.user_OthersStatus[1].hp <= 0)
+                    else if (player_PokeTeamNum == 1 || player_PokeTeamNum == 255 && BattleDatas_Default.user_OthersStatus[1].hp <= 0)
                     {
                         rePoke = 2;
                     }
-                    else if (player_PokeTeamNum == 2 || player_PokeTeamNum == 255 && BattleDatas.user_OthersStatus[2].hp <= 0)
+                    else if (player_PokeTeamNum == 2 || player_PokeTeamNum == 255 && BattleDatas_Default.user_OthersStatus[2].hp <= 0)
                     {
                         rePoke = 1;
                     }
@@ -1365,13 +1365,13 @@ public class BattleController : MonoBehaviour
             var Button_poke = poke.transform.Find("Button_poke");
 
             Button_poke.transform.Find("condition").gameObject.SetActive(false);
-            if (BattleDatas.user_OthersStatus[rePoke].condition != BattleEnum.condition.none)
+            if (BattleDatas_Default.user_OthersStatus[rePoke].condition != BattleEnum.condition.none)
             {
                 var condition = Button_poke.transform.Find("condition");
                 condition.gameObject.SetActive(true);
                 Color conditionColor = new Color();
                 string conditionName = "";
-                switch (BattleDatas.user_OthersStatus[rePoke].condition)
+                switch (BattleDatas_Default.user_OthersStatus[rePoke].condition)
                 {
                     case BattleEnum.condition.paralysis:
                         conditionColor = Color_Condition[0];
@@ -1414,8 +1414,8 @@ public class BattleController : MonoBehaviour
             Control_Situation.transform.Find("Button_Front").gameObject.SetActive(true);
             Control_Situation.transform.Find("Button_BackGround").gameObject.SetActive(false);
 
-            var thisPoke = BattleDatas.user_PokemonData[rePoke];
-            var thisPoke_OtherStatus = BattleDatas.user_OthersStatus[rePoke];
+            var thisPoke = BattleDatas_Default.user_PokemonData[rePoke];
+            var thisPoke_OtherStatus = BattleDatas_Default.user_OthersStatus[rePoke];
 
             var type1 = poke_Status.Find("Type1");
             Color buttonColor = new Color();
@@ -1789,7 +1789,7 @@ public class BattleController : MonoBehaviour
                 image_Gender.gameObject.SetActive(false);
             }
 
-            if(BattleDatas.user_OthersStatus[rePoke].hp <= 0)
+            if(BattleDatas_Default.user_OthersStatus[rePoke].hp <= 0)
             {
                 poke.gameObject.SetActive(false);
             }

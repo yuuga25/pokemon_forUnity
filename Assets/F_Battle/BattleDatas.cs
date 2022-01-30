@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class BattleDatas
 {
+    public static BattleDatas_Default[] battleDatas = new BattleDatas_Default[2];   //ポケモンデータ配列[0]プレイヤー、[1]エネミー
+
+    public static CommonField commonField = new CommonField();                      //両フィールドに影響のあるもの
+}
+public class BattleDatas_Default
+{
     public static UserData_Pokémon[] user_PokemonData = new UserData_Pokémon[3];
     public static UserData_Pokémon[] enemy_PokemonData = new UserData_Pokémon[3];
     public static BattleStatus user_BattleStatus;
@@ -16,6 +22,12 @@ public class BattleDatas
     public static IndividualFields enemy_Fields = new IndividualFields();
 
     public static CommonField commonField = new CommonField();
+
+    //新しいバージョン　↑書き換え終了後削除
+    public UserData_Pokémon[] pokemonData = new UserData_Pokémon[3];
+    public BattleStatus battleStatus;
+    public OthersStatus[] othersStatus = new OthersStatus[3];
+    public IndividualFields individualFields = new IndividualFields();
 }
 
 //バトル場に出ているポケモンのステータス

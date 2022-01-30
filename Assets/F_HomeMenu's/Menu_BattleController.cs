@@ -248,7 +248,7 @@ public class Menu_BattleController : MonoBehaviour
         {
             UserData_Pokémon battlePokemon = new UserData_Pokémon();
             battlePokemon = DataLists.playerData.teamDatas.pokémons[teamMenberList[i] - 1];
-            BattleDatas.user_PokemonData[i] = battlePokemon;
+            BattleDatas_Default.user_PokemonData[i] = battlePokemon;
 
             OthersStatus othersStatus = new OthersStatus();
             othersStatus.hp = battlePokemon.userP_Real_Hp;
@@ -307,7 +307,7 @@ public class Menu_BattleController : MonoBehaviour
                 }
             }
 
-            BattleDatas.user_OthersStatus[i] = othersStatus;
+            BattleDatas_Default.user_OthersStatus[i] = othersStatus;
         }
 
         //最大レベル代入
@@ -878,7 +878,7 @@ public class Menu_BattleController : MonoBehaviour
                 }
             }
             #endregion
-            BattleDatas.enemy_PokemonData[i] = enemy_PokeData;
+            BattleDatas_Default.enemy_PokemonData[i] = enemy_PokeData;
 
             OthersStatus othersStatus = new OthersStatus();
             othersStatus.hp = enemy_PokeData.userP_Real_Hp;
@@ -915,7 +915,7 @@ public class Menu_BattleController : MonoBehaviour
                 }
             }
 
-            BattleDatas.enemy_OthersStatus[i] = othersStatus;
+            BattleDatas_Default.enemy_OthersStatus[i] = othersStatus;
         }
 
         StartCoroutine(loadScene());

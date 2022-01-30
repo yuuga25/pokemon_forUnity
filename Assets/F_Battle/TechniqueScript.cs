@@ -629,10 +629,10 @@ public class TechniqueScript : MonoBehaviour
             turnScript.p1_Storage.othersStatus.hp = turnScript.p1_Storage.userData_Pokémon.userP_Real_Hp;
         }
 
-        if (turnScript.p1_Storage.userData_Pokémon == BattleDatas.user_PokemonData[battleController.player_PokeTeamNum])
+        if (turnScript.p1_Storage.userData_Pokémon == BattleDatas_Default.user_PokemonData[battleController.player_PokeTeamNum])
         {
             battleController.player_HpSlider.value = turnScript.p1_Storage.othersStatus.hp;
-            battleController.Pokemon1.transform.Find("HPBer_Player1").Find("Text_HPValue").GetComponent<Text>().text = $"{battleController.player_HpSlider.value}/{BattleDatas.user_PokemonData[battleController.player_PokeTeamNum].userP_Real_Hp}";
+            battleController.Pokemon1.transform.Find("HPBer_Player1").Find("Text_HPValue").GetComponent<Text>().text = $"{battleController.player_HpSlider.value}/{BattleDatas_Default.user_PokemonData[battleController.player_PokeTeamNum].userP_Real_Hp}";
             if (battleController.player_HpSlider.value <= battleController.player_HpSlider.maxValue / 5)
             {
                 battleController.player_HpSlider.gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color = battleController.Color_HpBer[2];
@@ -646,7 +646,7 @@ public class TechniqueScript : MonoBehaviour
                 battleController.player_HpSlider.gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color = battleController.Color_HpBer[0];
             }
         }
-        else if(turnScript.p1_Storage.userData_Pokémon == BattleDatas.enemy_PokemonData[battleController.enemy_PokeTeamNum])
+        else if(turnScript.p1_Storage.userData_Pokémon == BattleDatas_Default.enemy_PokemonData[battleController.enemy_PokeTeamNum])
         {
             battleController.enemy_HpSlider.value = turnScript.p1_Storage.othersStatus.hp;
             if (battleController.enemy_HpSlider.value <= battleController.enemy_HpSlider.maxValue / 5)
@@ -833,10 +833,10 @@ public class TechniqueScript : MonoBehaviour
 
         if (turnScript.p1_Storage.othersStatus.hp <= 0) turnScript.p1_Storage.othersStatus.hp = 0;
 
-        if (turnScript.p1_Storage.userData_Pokémon == BattleDatas.user_PokemonData[battleController.player_PokeTeamNum])
+        if (turnScript.p1_Storage.userData_Pokémon == BattleDatas_Default.user_PokemonData[battleController.player_PokeTeamNum])
         {
             battleController.player_HpSlider.value = turnScript.p1_Storage.othersStatus.hp;
-            battleController.Pokemon1.transform.Find("HPBer_Player1").Find("Text_HPValue").GetComponent<Text>().text = $"{battleController.player_HpSlider.value}/{BattleDatas.user_PokemonData[battleController.player_PokeTeamNum].userP_Real_Hp}";
+            battleController.Pokemon1.transform.Find("HPBer_Player1").Find("Text_HPValue").GetComponent<Text>().text = $"{battleController.player_HpSlider.value}/{BattleDatas_Default.user_PokemonData[battleController.player_PokeTeamNum].userP_Real_Hp}";
             if (battleController.player_HpSlider.value <= battleController.player_HpSlider.maxValue / 5)
             {
                 battleController.player_HpSlider.gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color = battleController.Color_HpBer[2];
@@ -850,7 +850,7 @@ public class TechniqueScript : MonoBehaviour
                 battleController.player_HpSlider.gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color = battleController.Color_HpBer[0];
             }
         }
-        else if (turnScript.p1_Storage.userData_Pokémon == BattleDatas.enemy_PokemonData[battleController.enemy_PokeTeamNum])
+        else if (turnScript.p1_Storage.userData_Pokémon == BattleDatas_Default.enemy_PokemonData[battleController.enemy_PokeTeamNum])
         {
             battleController.enemy_HpSlider.value = turnScript.p1_Storage.othersStatus.hp;
             if (battleController.enemy_HpSlider.value <= battleController.enemy_HpSlider.maxValue / 5)
@@ -1040,10 +1040,10 @@ public class TechniqueScript : MonoBehaviour
     #region トリックルーム
     public void TrickRoom()
     {
-        if(BattleDatas.commonField.trickRoom == false)
+        if(BattleDatas_Default.commonField.trickRoom == false)
         {
-            BattleDatas.commonField.trickRoom = true;
-            BattleDatas.commonField.trickRoomTurn = 5;
+            BattleDatas_Default.commonField.trickRoom = true;
+            BattleDatas_Default.commonField.trickRoomTurn = 5;
             turnScript.message_Tech.Add("時空が　ゆがんだ！");
         }
         else
@@ -1068,10 +1068,10 @@ public class TechniqueScript : MonoBehaviour
             turnScript.p1_Storage.othersStatus.hp = turnScript.p1_Storage.userData_Pokémon.userP_Real_Hp;
         }
 
-        if (turnScript.p1_Storage.userData_Pokémon == BattleDatas.user_PokemonData[battleController.player_PokeTeamNum])
+        if (turnScript.p1_Storage.userData_Pokémon == BattleDatas_Default.user_PokemonData[battleController.player_PokeTeamNum])
         {
             battleController.player_HpSlider.value = turnScript.p1_Storage.othersStatus.hp;
-            battleController.Pokemon1.transform.Find("HPBer_Player1").Find("Text_HPValue").GetComponent<Text>().text = $"{battleController.player_HpSlider.value}/{BattleDatas.user_PokemonData[battleController.player_PokeTeamNum].userP_Real_Hp}";
+            battleController.Pokemon1.transform.Find("HPBer_Player1").Find("Text_HPValue").GetComponent<Text>().text = $"{battleController.player_HpSlider.value}/{BattleDatas_Default.user_PokemonData[battleController.player_PokeTeamNum].userP_Real_Hp}";
             if (battleController.player_HpSlider.value <= battleController.player_HpSlider.maxValue / 5)
             {
                 battleController.player_HpSlider.gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color = battleController.Color_HpBer[2];
@@ -1085,7 +1085,7 @@ public class TechniqueScript : MonoBehaviour
                 battleController.player_HpSlider.gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color = battleController.Color_HpBer[0];
             }
         }
-        else if (turnScript.p1_Storage.userData_Pokémon == BattleDatas.enemy_PokemonData[battleController.enemy_PokeTeamNum])
+        else if (turnScript.p1_Storage.userData_Pokémon == BattleDatas_Default.enemy_PokemonData[battleController.enemy_PokeTeamNum])
         {
             battleController.enemy_HpSlider.value = turnScript.p1_Storage.othersStatus.hp;
 
