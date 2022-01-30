@@ -3,12 +3,12 @@
 **制作・立案**　佐藤 侑牙（サトウ ユウガ）
 
 - [概要](https://github.com/yuuga25/pokemon_forUnity#%E6%A6%82%E8%A6%81)
-　- [解説動画](https://github.com/yuuga25/pokemon_forUnity#%E8%A7%A3%E8%AA%AC%E5%8B%95%E7%94%BB-)
+    - [解説動画](https://github.com/yuuga25/pokemon_forUnity#%E8%A7%A3%E8%AA%AC%E5%8B%95%E7%94%BB-)
 - [製作意図](https://github.com/yuuga25/pokemon_forUnity#%E5%88%B6%E4%BD%9C%E6%84%8F%E5%9B%B3)
 - [使用技術](https://github.com/yuuga25/pokemon_forUnity#%E4%BD%BF%E7%94%A8%E6%8A%80%E8%A1%93)
 - [気を付けた・こだわった部分](https://github.com/yuuga25/pokemon_forUnity#%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9)
-　- [データベース](https://github.com/yuuga25/pokemon_forUnity#%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9)
-　- [UI](https://github.com/yuuga25/pokemon_forUnity#ui)
+    - [データベース](https://github.com/yuuga25/pokemon_forUnity#%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9)
+    - [UI](https://github.com/yuuga25/pokemon_forUnity#ui)
 - [感想](https://github.com/yuuga25/pokemon_forUnity#%E8%A3%BD%E4%BD%9C%E3%81%97%E3%81%A6%E3%81%BF%E3%81%A6%E6%84%9F%E3%81%98%E3%81%9F%E3%81%93%E3%81%A8%E6%84%9F%E6%83%B3)
 
 ## 概要
