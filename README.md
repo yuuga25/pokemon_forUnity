@@ -9,7 +9,7 @@
 
 ※非営利目的です※
 
-## [プレイ動画](https://youtu.be/9KUepTCOu5s)
+### [解説動画](https://youtu.be/9KUepTCOu5s)
 
 # 制作意図
 
